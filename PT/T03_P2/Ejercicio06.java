@@ -3,7 +3,7 @@ package T03_P2;
 import java.util.Scanner;
 
 /**
- * 
+ * <a href="https://github.com/Lobozel/Programacion/blob/master/PT/T03_P2/Ejercicio06.java"></a>
  * @author Miguel¡ngel
  *
  */
