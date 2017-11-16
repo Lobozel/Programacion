@@ -29,6 +29,11 @@ public static void main(String[] args) { //Se abre el método main
 	num=entrada.nextInt();
 	//**************************
 	
+	//Comprobar si es negativo y pasarlo a positivo para que no de error
+	if(num<0)
+		num=-num;
+	//**************************
+	
 	//Contar dígitos del número leido
 	digitos=(int)(Math.log10(num)+1);
 	/**

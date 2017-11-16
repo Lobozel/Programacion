@@ -24,7 +24,24 @@ public static void main(String[] args) { //Se abre el método main
 
 	//Declaración de variables
 	Scanner entrada = new Scanner(System.in);//Creo un objeto Scanner para leer.
+	int num;
+	//**************************
 	
+	//Leer un número entero positivo
+	do{
+		System.out.println("Introduce un número mayor que 0.");
+		num=entrada.nextInt();
+	}while(num<=0); //Si introduciera un 0 no podría realizarse la secuencia del enunciado, ya que empieza con un 1.
+	//**************************
+	
+	//Mostrar la secuencia del enunciado
+	System.out.println();
+	for(int cont1=num;cont1>1;cont1--){ //El contador 1 empieza con el valor leido y baja hasta el valor 1.
+		for(int cont2=1;cont2<=cont1;cont2++){ //El contador 2 empieza con el valor 1 y sube hasta el valor de contador 2.
+			System.out.print(cont2+"    ");
+		}
+		System.out.println();
+	}
 	//**************************
 	
 	entrada.close(); //cierro el objeto Scanner.

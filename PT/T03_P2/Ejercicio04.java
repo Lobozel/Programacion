@@ -23,7 +23,36 @@ public static void main(String[] args) { //Se abre el método main
 
 	//Declaración de variables
 	Scanner entrada = new Scanner(System.in);//Creo un objeto Scanner para leer.
+	int horas;
+	double salarioHora, sueldo;
+	//**************************
 	
+	//Leer horas trabajadas y la tasa que le pagan por hora
+	do{
+		System.out.println("Introduce cuántas horas has trabajado.");
+		horas=entrada.nextInt();
+	}while(horas<0);
+	do{
+		System.out.println("Introduce cuanto cobras cada hora.");
+		salarioHora=entrada.nextFloat();
+	}while(salarioHora<0);
+	//**************************
+	
+	//Calcular el sueldo total del empleado
+	if (horas<38)
+		sueldo=horas*salarioHora;
+	else{
+		sueldo=salarioHora*37+(horas-37)*(salarioHora+salarioHora*0.5);
+	}
+	//**************************
+	
+	//Calcular impuestos
+	if (sueldo>750)
+		sueldo-=sueldo*0.1;
+	//**************************
+	
+	//Mostrar resultado
+	System.out.println("El empleado cobrará "+sueldo);
 	//**************************
 	
 	entrada.close(); //cierro el objeto Scanner.
