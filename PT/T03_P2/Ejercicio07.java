@@ -21,17 +21,14 @@ public class Ejercicio07 { //Se abre la clase
 public static void factor(int x){
 
 	//Compruebo si el número es primo o no
-	  int contador = 2;
-	  boolean primo=true;
-	  while ((primo) && (contador!=x)){
-	    if (x % contador == 0)
-	      primo = false;
-	    contador++;
-	  }
+	int contaDiv=0; //Declaro una variable que cuenta por cuantos números es divisible, para saber si es primo o no.
+	for (int cont=1;cont<=x;cont++)
+		  if(x%cont==0)
+		  contaDiv++;
 	//**************************
 	
 	  //Si es primo, muestro que lo es y si no, escribo el descompongo factorial del número
-	  if(primo)
+	  if(contaDiv<=2 && x!=1)
 		  System.out.println(x+" es primo.\n");
 	  else{
 		  //Descomposición factorial.
