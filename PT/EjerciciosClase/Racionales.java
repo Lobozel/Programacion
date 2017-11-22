@@ -81,6 +81,7 @@ private void simplificar() {
     numerador = signo*(numerador/s);
     denominador = signo*(denominador/s);
 }
+
 public static Racionales sumaRacionales(Racionales r1, Racionales r2) {
 	Racionales sum = new Racionales();
 	if(r1.denominador==r2.denominador) {
