@@ -49,4 +49,5 @@ public Punto puntoMedio(Punto p) {
 	punto.setCoordenadaY((this.coordenadaY+p.coordenadaY)/2);
 	return punto;
 }
+
 }
