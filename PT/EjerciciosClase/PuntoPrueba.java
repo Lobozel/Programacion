@@ -17,6 +17,7 @@ public class PuntoPrueba {
 		System.out.println("La distancia entre el punto1 y el punto 2 es: "+punto1.distancia(punto2));
 		Punto puntoMedio = new Punto(punto2.puntoMedio(punto3));
 		System.out.println("Las coordenadas de PuntoMedio son: "+puntoMedio.toString());
+		punto3.cuadrante();
 		entrada.close();
 		
 	}

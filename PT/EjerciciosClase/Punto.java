@@ -50,4 +50,21 @@ public Punto puntoMedio(Punto p) {
 	return punto;
 }
 
+public void cuadrante() {
+	if (this.coordenadaX==0 && this.coordenadaY==0)
+		System.out.println("No se encuentra en ningún cuadrante (0,0)");
+	else if(this.coordenadaX==0 && this.coordenadaY!=0)
+		System.out.println("Se encuentra en el eje Y.");
+	else if(this.coordenadaX!=0 && this.coordenadaY==0)
+		System.out.println("Se encuentra en el eje X");
+	else if(this.coordenadaX>0 && this.coordenadaY>0)
+		System.out.println("Se encuentra en el cuadrante 1.");
+	else if (this.coordenadaX>0 && this.coordenadaY<0)
+		System.out.println("Se encuentra en el cuadrante 4.");
+	else if (this.coordenadaX<0 && this.coordenadaY>0)
+		System.out.println("Se encuentra en el cuadrante 2.");
+	else
+		System.out.println("Se encuentra en el cuadrante 3.");
+}
+
 }
