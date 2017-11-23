@@ -36,12 +36,14 @@ public void setCoordenadaY(int coordenadaY) {
 public String toString() {
 	return "Punto [coordenadaX=" + coordenadaX + ", coordenadaY=" + coordenadaY + "]";
 }
+
 //Raiz:(x-x1)²+(y-y1)²
 public double distancia(Punto p) {
 	double distancia;
 	distancia=Math.sqrt(Math.pow(this.coordenadaX-p.coordenadaX, 2)+Math.pow(this.coordenadaY, p.coordenadaY));
 	return distancia;
 }
+
 //x=(x+x1)/2 ; y=(y+y1)/2
 public Punto puntoMedio(Punto p) {
 	Punto punto = new Punto();
