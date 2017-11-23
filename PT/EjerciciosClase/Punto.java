@@ -43,9 +43,11 @@ public double distancia(Punto p) {
 }
 
 //x=(x+x1)/2 ; y=(y+y1)/2
-public void puntoMedio(Punto punto1, Punto punto2) {
-	this.setCoordenadaX((punto1.coordenadaX+punto2.coordenadaX)/2);
-	this.setCoordenadaY((punto1.coordenadaY+punto2.coordenadaY)/2);
+public Punto puntoMedio(Punto p) {
+	Punto punto = new Punto();
+	punto.setCoordenadaX((this.coordenadaX+p.coordenadaX)/2);
+	punto.setCoordenadaY((this.coordenadaY+p.coordenadaY)/2);
+	return punto;
 }
 
 }
