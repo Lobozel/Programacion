@@ -2,9 +2,6 @@ package EjerciciosClase;
 
 import EjerciciosClase.Punto;
 
-/**
- * @author MiguelAngel
- */
 public class Triangulo {
     private Punto Vertice1, Vertice2, Vertice3;
 
@@ -76,7 +73,4 @@ public class Triangulo {
         return Math.pow(semiperimetro*(Math.pow((semiperimetro-punto1.distancia(punto2)),2)*Math.pow((semiperimetro-punto2.distancia(punto3)), 2)*Math.pow((semiperimetro-punto2.distancia(punto3)),2)),0.5);
     }
 
-    public static void main(String[] args) {
-
-    }
 }
