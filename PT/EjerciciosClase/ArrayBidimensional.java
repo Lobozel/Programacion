@@ -21,8 +21,8 @@ public class ArrayBidimensional {
 		
 		System.out.println("\nLeer por columnas:");
 		
-		for(int colum=0;colum<a.length-1;colum++) {
-			for(int filas=0;filas<a[colum].length+1;filas++)
+		for(int colum=0;colum<a[colum].length;colum++) {
+			for(int filas=0;filas<a.length;filas++)
 				System.out.printf(String.format("%02d", a[filas][colum])+" ");
 		System.out.println();
 		}
