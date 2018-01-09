@@ -28,7 +28,7 @@ private static Scanner entrada = new Scanner(System.in);
 			System.out.println();
 			}
 	}
-	public static int ValorMáximo(int[][] a){
+	public static int ValorMÃ¡ximo(int[][] a){
 		int max=Integer.MIN_VALUE;
 		for(int fila=0;fila<a.length;fila++)
 			for (int columna=0;columna<a[0].length;columna++)
@@ -36,7 +36,7 @@ private static Scanner entrada = new Scanner(System.in);
 					max=a[fila][columna];
 		return max;			
 }
-	public static int ValorMínimo(int[][] a){
+	public static int ValorMÃ­nimo(int[][] a){
 		int min=Integer.MAX_VALUE;
 		for(int fila=0;fila<a.length;fila++)
 			for (int columna=0;columna<a[0].length;columna++)
