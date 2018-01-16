@@ -18,29 +18,34 @@ public class Prueba_OrdenarArray {
 		
 		//Muestra el array sin ordenar
 		System.out.println("Sin ordenar:");
-		for(int i=0;i<array.length;i++)
-			System.out.print(array[i]+" ");
+		for(int elemento:array)
+			System.out.print(elemento+" ");
 		
 		//El usuario escoge el método que prefiera para ordenar el array
 		do {
 		System.out.println("\n\nEligue método de ordenación:\n"
 				+ "1.-Por selección.\n"
-				+ "2.-Por intercambio.");
+				+ "2.-Por intercambio.\n"
+				+ "3.-Burbuja.\n"
+				+ "4.-Burbuja Mejorado.");
 		menu=entrada.nextInt();
-		}while(menu<1 || menu>2);
+		}while(menu<1 || menu>4);
 		
 		//Se llama al método escogido por el usuario
 		switch(menu) {
-			case 1: OrdenarArray.OrdenarPorSeleccion(array);
+			case 1: OrdenarArray.Seleccion(array);
 				break;
-			case 2: OrdenarArray.OrdenarPorIntercambio(array);
+			case 2: OrdenarArray.Intercambio(array);
 				break;
+			case 3: OrdenarArray.Burbuja(array);
+				break;
+			case 4: OrdenarArray.BurbujaMejorado(array);
 		}
 		
 		//Se muestra el array ordenado
 		System.out.println("\nOrdenado:");
-		for(int i=0;i<array.length;i++)
-			System.out.print(array[i]+" ");
+		for(int elemento:array)
+			System.out.print(elemento+" ");
 		
 		
 		entrada.close();
