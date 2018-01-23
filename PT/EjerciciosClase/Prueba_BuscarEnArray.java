@@ -1,24 +1,27 @@
 package EjerciciosClase;
 
-import EjerciciosClase.Ordenada;
-
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Vector;
 
+/**
+ * 
+ * @author MiguelÁngel
+ *
+ */
 
 public class Prueba_BuscarEnArray {
 	
+	//Método para crear palabras aleatorias
 	private static String getSaltString() {
-        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder salt = new StringBuilder();
-        Random rnd = new Random();
-        while (salt.length() < 5) { // length of the random string.
-            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-            salt.append(SALTCHARS.charAt(index));
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder cadena = new StringBuilder();
+        Random numRandom = new Random();
+        while (cadena.length() < 5) { // el 5 es la longitud de la cadena de cada palabra
+            int i=(int)(numRandom.nextFloat()*caracteres.length());
+            cadena.append(caracteres.charAt(i));
         }
-        String saltStr = salt.toString();
-        return saltStr;
+        String cadenaRandom = cadena.toString();
+        return cadenaRandom;
 
     }
 	public static void main(String[] args) {
@@ -64,8 +67,13 @@ public class Prueba_BuscarEnArray {
 			menu=entrada.nextInt();
 			}while(menu<1 || menu>3);
 			
-			if(menu>1)
+			if(menu>1) { //Ordena el array y lo muestra ordenado
 				OrdenarArray.BurbujaMejoradoInt(arrayInt);
+				System.out.println("\nArray ordenado:");
+				for(int elemento:arrayInt)
+					System.out.print(elemento+" ");
+				System.out.println();
+			}
 			
 			//Se llama al método escogido por el usuario
 			switch(menu) {
@@ -94,26 +102,21 @@ public class Prueba_BuscarEnArray {
 			 */
 		case 2:
 			String[] arrayString = new String[(int)(Math.random()*(10-1)+10)];
-//			Vector <String> vector=new Vector<String >((int)(Math.random()*(10-1)+10));
+
 			
 //			Llena el array de valores random
 			for(int i=0;i<arrayString.length;i++) 
 				arrayString[i]=Prueba_BuscarEnArray.getSaltString();
-//			vector.add("pepe");
-//			for(int i=1;i<vector.capacity();i++)
-//				vector.add(Prueba_BuscarEnArray.getSaltString());
-				
-			
+
 			//Muestra el array
 			System.out.println("\nArray de cadenas:");
 			for(String elemento:arrayString)
 				System.out.print(elemento+" ");
-//			System.out.println("Array de cadenas:");
-//			for(String elemento:vector)
-//				System.out.print(elemento+" ");
+
 			//Lee la cadena a buscar dentro del array
 			System.out.println("\n\nIntroduce la cadena a buscar.");
 			buscarString=entrada.next();
+			
 			//El usuario escoge el método que prefiera para buscar en el array
 			do {
 			System.out.println("\nEligue método de busquedad:\n"
@@ -123,8 +126,13 @@ public class Prueba_BuscarEnArray {
 			menu=entrada.nextInt();
 			}while(menu<1 || menu>3);
 			
-//			if(menu>1)
-//				OrdenarArray.BurbujaMejorado(arrayInt);
+			if(menu>1) { //Ordena el array y lo ordena
+				OrdenarArray.BurbujaMejoradoString(arrayString);
+				System.out.println("\nArray ordenado:");
+				for(String elemento:arrayString)
+					System.out.print(elemento+" ");
+				System.out.println();
+			}
 			
 			//Se llama al método escogido por el usuario
 			switch(menu) {
@@ -132,10 +140,10 @@ public class Prueba_BuscarEnArray {
 					resultado=BuscarEnArray.LinealString(arrayString, buscarString);
 					break;
 				case 2:
-//					resultado=BuscarEnArray.LinealOrdenadoString(arrayString, buscarString);
+					resultado=BuscarEnArray.LinealOrdenadoString(arrayString, buscarString);
 					break;
 				case 3: 
-//					resultado=BuscarEnArray.BinarioString(arrayString, buscarString);
+					resultado=BuscarEnArray.BinarioString(arrayString, buscarString);
 					break;
 				
 			}

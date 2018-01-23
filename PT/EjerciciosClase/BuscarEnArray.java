@@ -73,7 +73,7 @@ public class BuscarEnArray {
 		while(primero<=ultimo) {
 			centro=(primero+ultimo)/2;
 			if(b==a[centro])
-				return centro;
+				return (centro+1);
 			else if(b<a[centro])
 				ultimo=centro-1;
 			else 
@@ -95,7 +95,7 @@ public class BuscarEnArray {
 		while(primero<=ultimo) {
 			centro=(primero+ultimo)/2;
 			if(b.equals(a[centro]))
-				return centro;
+				return (centro+1);
 			else if(b.compareTo(a[centro])<0)
 				ultimo=centro-1;
 			else 
