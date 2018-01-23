@@ -33,13 +33,13 @@ public class Prueba_OrdenarArray {
 		
 		//Se llama al método escogido por el usuario
 		switch(menu) {
-			case 1: OrdenarArray.Seleccion(array);
+			case 1: OrdenarArray.SeleccionInt(array);
 				break;
-			case 2: OrdenarArray.Intercambio(array);
+			case 2: OrdenarArray.IntercambioInt(array);
 				break;
-			case 3: OrdenarArray.Burbuja(array);
+			case 3: OrdenarArray.BurbujaInt(array);
 				break;
-			case 4: OrdenarArray.BurbujaMejorado(array);
+			case 4: OrdenarArray.BurbujaMejoradoInt(array);
 		}
 		
 		//Se muestra el array ordenado
