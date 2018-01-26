@@ -1,59 +1,58 @@
 package EjerciciosClase;
 
-public class Empleado {
-private String nombre, direccion, telefono, nif;
-private Especialidad especialidad;
-public Empleado() {
-	
-}
-public Empleado(String nombre, String direccion, String telefono, String nif, Especialidad especialidad) {
-	this.nombre=nombre;
-	this.direccion=direccion;
-	this.telefono=telefono;
-	this.nif=nif;
-	this.especialidad=especialidad;
-}
-public Empleado(Empleado e) {
-	this.nombre=e.nombre;
-	this.direccion=e.direccion;
-	this.telefono=e.telefono;
-	this.nif=e.nif;
-	this.especialidad=e.especialidad;  
-}
+public class empleado {
+/*
+ * Parámetros privados
+ */
+private String nombre, apellido;
+private int edad;
+private double sueldo;
+
+/*
+ * Getters and Setters
+ */
 public String getNombre() {
 	return nombre;
 }
 public void setNombre(String nombre) {
 	this.nombre = nombre;
 }
-public String getDireccion() {
-	return direccion;
+public String getApellido() {
+	return apellido;
 }
-public void setDireccion(String direccion) {
-	this.direccion = direccion;
+public void setApellido(String apellido) {
+	this.apellido = apellido;
 }
-public String getTelefono() {
-	return telefono;
+public int getEdad() {
+	return edad;
 }
-public void setTelefono(String telefono) {
-	this.telefono = telefono;
+public void setEdad(int edad) {
+	this.edad = edad;
 }
-public String getNif() {
-	return nif;
+public double getSueldo() {
+	return sueldo;
 }
-public void setNif(String nif) {
-	this.nif = nif;
+public void setSueldo(double sueldo) {
+	this.sueldo = sueldo;
 }
-public Especialidad getEspecialidad() {
-	return especialidad;
+
+/*
+ * Constructores de la clase
+ */
+public empleado() {
+	
 }
-public void setEspecialidad(Especialidad especialidad) {
-	this.especialidad = especialidad;
+
+public empleado(String nombre, String apellido, int edad, double sueldo) {
+	this.nombre=nombre;
+	this.apellido=apellido;
+	this.edad=edad;
+	this.sueldo=sueldo;
 }
 @Override
 public String toString() {
-	return "Empleado [nombre=" + nombre + ", direccion=" + direccion + ", telefono=" + telefono + ", nif=" + nif
-			+ ", especialidad=" + especialidad + "]";
+	return "El empleado " + nombre +" "+ apellido + " con " + edad + " años, tiene un sueldo de" + sueldo + ".";
 }
+
 
 }
