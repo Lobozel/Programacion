@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * 
- * @author MiguelÁngel
+ * @author MiguelÃ�ngel
  *
  */
 public class formatofechas {
@@ -12,7 +12,7 @@ public class formatofechas {
  * Hacer un programa que al recibir como dato una cadena de caracteres
  * que represente una fecha en formato (dd/mm/aa), genere otra cadena
  * con la misma fecha pero con un formato (dd de nombre del mes de aaaa).
- * Por ejemplo si se ingresa la cadena: 20/11/2006 la otra cadena será: 20
+ * Por ejemplo si se ingresa la cadena: 20/11/2006 la otra cadena serÃ¡: 20
  * de Noviembre de 2006
  */
 	public static String cambioDeFormato(String f) {
@@ -48,16 +48,16 @@ public class formatofechas {
 	public static void main(String[] args) {
 	Scanner entrada = new Scanner(System.in);
 	String fecha;
-	do {
-	System.out.println("Introduce una fecha con el formato dd/mm/aaaa");
-	fecha=entrada.nextLine();
-	}while();
+//	do {
+//	System.out.println("Introduce una fecha con el formato dd/mm/aaaa");
+//	fecha=entrada.nextLine();
+//	}while();
 //	}while(hora.length() != 5 || hora.charAt(2) != ':' ||
 //			Integer.parseInt(hora.substring(0, 2)) > 23 ||
 //			Integer.parseInt(hora.substring(0, 2)) < 0 ||
 //			Integer.parseInt(hora.substring(3, 5)) > 59 ||
 //Integer.parseInt(hora.substring(3, 5)) < 0);
-	System.out.println(cambioDeFormato(fecha));
+//	System.out.println(cambioDeFormato(fecha));
 	entrada.close();
 
 	}

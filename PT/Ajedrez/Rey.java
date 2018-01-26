@@ -3,11 +3,11 @@ package Ajedrez;
 public class Rey {
 
 	private Color color;
-	private Posici贸n posicion;
+	private Posici髇 posicion;
 	
 	public Rey() {
 		this.color=Color.BLANCO;
-		this.posicion= new Posici贸n(1,'e');
+		this.posicion= new Posici髇(1,'e');
 	}
 	
 	public Rey(Color c) {
@@ -18,11 +18,11 @@ public class Rey {
 		return this.color;
 	}
 	
-	public Posici贸n getPosici贸n() {
+	public Posici髇 getPosici髇() {
 		return this.posicion;
 	}
 	
-	public void mueve(Direcci贸n d) {
+	public void mueve(Direcci髇 d) {
 		switch (d) {
 		case NORTE:
 			if(this.posicion.getFila()!=8)

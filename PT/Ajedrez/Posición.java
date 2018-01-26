@@ -1,11 +1,11 @@
 package Ajedrez;
 
-public class PosiciÃ³n {
+public class Posición {
 
 	private int fila;
 	private char columna;
 	
-	public PosiciÃ³n(int fila, char columna) {
+	public Posición(int fila, char columna) {
 		this.fila=fila;
 		this.columna=columna;
 	}

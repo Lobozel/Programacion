@@ -7,7 +7,7 @@ public class PruebaAjedrez {
 	public static void main(String[] args) {
 		Rey rey = new Rey();
 		Scanner entrada = new Scanner(System.in);
-		Direcci贸n d=Direcci贸n.NORTE;
+		Direcci髇 d=Direcci髇.NORTE;
 		int menu=0;
 		//menu para mover al rey y mostrar la posici贸n del rey despu茅s
 		//de cada movimiento
@@ -27,21 +27,21 @@ public class PruebaAjedrez {
 			menu=entrada.nextInt();
 		}while(menu<1 || menu>9);
 		switch (menu) {
-		case 1: d=Direcci贸n.NORTE;
+		case 1: d=Direcci髇.NORTE;
 		break;
-		case 2: d=Direcci贸n.NORESTE;
+		case 2: d=Direcci髇.NORESTE;
 		break;
-		case 3: d=Direcci贸n.ESTE;
+		case 3: d=Direcci髇.ESTE;
 		break;
-		case 4: d=Direcci贸n.SURESTE;
+		case 4: d=Direcci髇.SURESTE;
 		break;
-		case 5: d=Direcci贸n.SUR;
+		case 5: d=Direcci髇.SUR;
 		break;
-		case 6: d=Direcci贸n.SUROESTE;
+		case 6: d=Direcci髇.SUROESTE;
 		break;
-		case 7: d=Direcci贸n.OESTE;
+		case 7: d=Direcci髇.OESTE;
 		break;
-		case 8: d=Direcci贸n.NOROESTE;
+		case 8: d=Direcci髇.NOROESTE;
 		break;
 		default: System.out.println("Gracias por jugar.");
 		}
@@ -50,6 +50,7 @@ public class PruebaAjedrez {
 			System.out.println(rey.toString());
 		}
 		}
+		entrada.close();
 	}
 
 }

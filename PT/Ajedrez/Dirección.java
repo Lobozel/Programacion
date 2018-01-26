@@ -1,6 +1,6 @@
 package Ajedrez;
 
-public enum DirecciÃ³n {
+public enum Dirección {
 	NORTE, NORESTE, ESTE, SURESTE, SUR, SUROESTE, OESTE, NOROESTE;
 	
 }

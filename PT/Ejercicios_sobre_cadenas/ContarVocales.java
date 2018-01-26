@@ -18,7 +18,7 @@ public class ContarVocales {
 	 */
 	public static boolean esVocal(char c) {
 		//Lo hago con un array para no tener problemas al comparar con vocales con tildes
-		char[] vocal = new char[] {'a','Ã¡','e','Ã©','i','Ã­','o','Ã³','u','Ãº'};
+		char[] vocal = new char[] {'a','á','e','é','i','í','o','ó','u','ú'};
 		for(int i=0;i<vocal.length;i++)
 			if(vocal[i]==c)
 				return true;
