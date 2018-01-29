@@ -12,6 +12,7 @@ public class MinusculasAMayusculas {
 	System.out.println("Introduce una frase.");
 	String cad=entrada.nextLine();
 	String result="";
+	System.out.println(cad);
 	for(int i=0;i<cad.length();i++){
 		if(i==0 && Character.isLetter(cad.charAt(0)) ||
 				Character.isLetter(cad.charAt(i)) && Character.isSpaceChar(cad.charAt(i-1)))
