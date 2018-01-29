@@ -79,8 +79,8 @@ public class formatofechas {
 	fecha=entrada.nextLine();
 	}while(fecha.length()!=10 || fecha.charAt(2)!='/' || fecha.charAt(5)!='/' ||
 	Integer.parseInt(fecha.substring(3, 5))<1 || Integer.parseInt(fecha.substring(3, 5))>12 
-	|| Integer.parseInt(fecha.substring(0,2))<1
-	|| Integer.parseInt(fecha.substring(0,2))>diasMes(Integer.parseInt(fecha.substring(3, 5)),Integer.parseInt(fecha.substring(6, 10))));
+	|| Integer.parseInt(fecha.substring(0,2))<1 || Integer.parseInt(fecha.substring(0,2))>
+	diasMes(Integer.parseInt(fecha.substring(3, 5)),Integer.parseInt(fecha.substring(6, 10))));
 
 	System.out.println(cambioDeFormato(fecha));
 	entrada.close();
