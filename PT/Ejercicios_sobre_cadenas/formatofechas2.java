@@ -2,22 +2,9 @@ package Ejercicios_sobre_cadenas;
 
 import java.util.Scanner;
 
-/**
- * 
- * @author Miguelángel
- *
- */
-public class formatofechas {
-/*
- * Hacer un programa que al recibir como dato una cadena de caracteres
- * que represente una fecha en formato (dd/mm/aa), genere otra cadena
- * con la misma fecha pero con un formato (dd de nombre del mes de aaaa).
- * Por ejemplo si se ingresa la cadena: 20/11/2006 la otra cadena será: 20
- * de Noviembre de 2006
- */
-	public static String cambioDeFormato(String f) {
-		String[] fecha = new String[3];
-		fecha=f.split("/");
+public class formatofechas2 {
+	
+	public static String cambioDeFormato(String[] fecha) {
 		switch (fecha[1]) {
 		case "01": fecha[1]="Enero";
 		break;
@@ -46,14 +33,14 @@ public class formatofechas {
 		return fecha[0]+" de "+fecha[1]+" de "+fecha[2];
 	}
 	
-	protected static boolean bisiesto(int año){
+	protected static boolean bisiesto(int a�o){
 		boolean bisiesto=false;
-		if(año%4==0 || año%400==0 && año%100!=0)
+		if(a�o%4==0 || a�o%400==0 && a�o%100!=0)
 			bisiesto=true;
 		return bisiesto;
 	}
 	
-	public static int diasMes(int mes, int año){
+	public static int diasMes(int mes, int a�o){
 		int dias=0; 
 		switch (mes){
 		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
@@ -63,7 +50,7 @@ public class formatofechas {
 			dias=30;
 			break;
 		case 2:
-			if(bisiesto(año)) 
+			if(bisiesto(a�o)) 
 				dias=29;
 			else
 				dias=28;
@@ -74,15 +61,16 @@ public class formatofechas {
 	public static void main(String[] args) {
 	Scanner entrada = new Scanner(System.in);
 	String fecha;
+	String[] f = new String[3];
+	do{
 	do {
 	System.out.println("Introduce una fecha con el formato dd/mm/aaaa");
 	fecha=entrada.nextLine();
-	}while(fecha.length()!=10 || fecha.charAt(2)!='/' || fecha.charAt(5)!='/' ||
-	Integer.parseInt(fecha.substring(3, 5))<1 || Integer.parseInt(fecha.substring(3, 5))>12 
-	|| Integer.parseInt(fecha.substring(0,2))<1 || Integer.parseInt(fecha.substring(0,2))>
-	diasMes(Integer.parseInt(fecha.substring(3, 5)),Integer.parseInt(fecha.substring(6, 10))));
-
-	System.out.println(cambioDeFormato(fecha));
+	}while(fecha.length()!=10 || fecha.charAt(2)!='/' || fecha.charAt(5)!='/');
+	f=fecha.split("/");
+	}while(Integer.parseInt(f[1])<1 || Integer.parseInt(f[1])>12 || Integer.parseInt(f[0])<1 ||
+			Integer.parseInt(f[0])>diasMes(Integer.parseInt(f[1]),Integer.parseInt(f[2])));
+	System.out.println(cambioDeFormato(f));
 	entrada.close();
 
 	}
