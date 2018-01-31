@@ -59,15 +59,19 @@ public class ConvertirARomanos {
 	      }else if(cifras[3]==4)
 	    	  numromano+="IV";
 	      else
-	    	  for(int i=1;i<cifras[3];i++)
+	    	  for(int i=1;i<=cifras[3];i++)
 	    		  numromano+="I";
 	      
 		return numromano;
 	}
+	
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
-		System.out.println("Introduce un número y lo convertiré en Romano");
-		int num=entrada.nextInt();
+		int num=0;
+		do { //Solo leo números menores de 4000 porque no puedo poner letras con el guión encima
+		System.out.println("Introduce un número natural y lo convertiré en Romano (menor de 4000)");
+		num=entrada.nextInt();
+		}while(num>4000 || num<0);
 		System.out.println("Resultado: "+convertirARomano(num));
 		entrada.close();
 	}
