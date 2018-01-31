@@ -1,36 +1,25 @@
 package Ejercicios_sobre_cadenas;
 
+import java.util.Scanner;
+
 public class numerotelefonico {
 /*
- *  import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class Ejerc15 {
-    public static void main(String[] args) throws IOException{
-        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-
-        int i;
-        String cadena,c1="", c2="", c3="";
-        System.out.println("Ingrese la cadena a evaluar: ");
-        cadena=br.readLine();
-
-        for(i=0;i<cadena.length();i++){
-            if(i<2){
-                c1=c1+cadena.charAt(i);
-            }
-            else{
-                if(i==2){
-                    c2+=cadena.charAt(i);
-                }
-                else{
-                    c3+=cadena.charAt(i);
-                }
-            }
-        }
-        System.out.println("la nueva cadena es: \n"+"("+c1+")"+"-"+c2+"-"+c3);
-    }
-}
-
+ * Ingresar un número telefónico en formato de cadena y luego lo convierta
+ * de la siguiente manera: Número Telefónico: 525628400 Nueva
+ * Cadena:(52)-5-6284000
  */
+	public static void main(String[] args){
+		Scanner entrada = new Scanner(System.in);
+        String cad="";
+        
+        do{
+        System.out.println("Ingrese un número de teléfono que empiece por 52 y tenga 9 cifras en total");
+        cad=entrada.nextLine();
+        }while(cad.length()!=9 || Integer.parseInt(cad.substring(0, 2))!=52 ||
+        		Integer.parseInt(cad.substring(3,9))<0 || Integer.parseInt(cad.substring(3,9))>9999999);
+
+        System.out.println("("+cad.substring(0, 2)+")-"+cad.charAt(2)+"-"+cad.substring(3,9));
+
+        entrada.close();
+}
 }
