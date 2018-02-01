@@ -15,6 +15,7 @@ public class nombrealreves {
 		String nombre=entrada.nextLine();
 		String[] inverso = new String[1];
 		nombre=MinusculasAMayusculas.minusculasAMayusculas(nombre);
+		UnEspacio.limpiarBlancos(nombre);
 		inverso=nombre.split(" ");
 		for(int i=inverso.length-1;i>=0;i--)
 			System.out.print(inverso[i]+" ");
