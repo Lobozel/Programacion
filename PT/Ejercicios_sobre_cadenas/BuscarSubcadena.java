@@ -7,9 +7,9 @@ import java.util.Scanner;
  * @author MiguelÁngel
  *
  */
-public class BuscarSubcadena {
+public class ContarSubcadenas {
 //Contar cuantas veces se encuentra una subcadena dentro de una cadena.
-	public static int buscarSubcadena(String cad, String subcad) {
+	public static int contarSubcadenas(String cad, String subcad) {
 		int cont=0;
 		for(int i=0;i<cad.length()-subcad.length()+1;i++) 
 			if(subcad.compareTo(cad.substring(i, i+subcad.length()))==0) 
