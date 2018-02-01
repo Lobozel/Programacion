@@ -25,7 +25,7 @@ public class ContarSubcadenas {
 		System.out.println("Introduce la subcadena a buscar dentro de la cadena previa.");
 		subcad=entrada.nextLine();
 		subcad=subcad.toLowerCase();
-		System.out.println(subcad+" se encuentra "+buscarSubcadena(cad,subcad)+" veces en:\n"+cad);
+		System.out.println(subcad+" se encuentra "+contarSubcadenas(cad,subcad)+" veces en:\n"+cad);
 		
 		entrada.close();
 
