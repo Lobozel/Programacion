@@ -17,26 +17,50 @@ public class ConvertirARomanos {
 		cifras[1]=num/100%10;
 		cifras[2]=num/10%10;
 		cifras[3]=num%10;
-		String[] letraRomana = new String[] {"M","C","X","I","D","L","V"};
 		
-		
+		//miles
 	      for (int i=1;i<=cifras[0];i++)
-	             numromano+=letraRomana[0];
+	             numromano += "M";
+
+	      //centenas
+	      if(cifras[1]==9)
+	          numromano+="CM";
+	      else if (cifras[1]>=5) {
+	                     numromano+="D";
+	                     for (int i=6;i<=cifras[1];i++) {
+	                            numromano+="C";
+	                     }
+	      } else if (cifras[1]==4) 
+	                      numromano+="CD";
+	      else
+	           for (int i=1;i<=cifras[1];i++) 
+	                         numromano+="C";
+	                  
+	      //decenas      
+	      if(cifras[2]==9) 
+	    	  numromano+="XC";
+	       else if (cifras[2]>=5) {
+	    	  numromano+="L";
+	    	  for(int i=6;i<=cifras[2];i++)
+	    		  numromano+="X";
+	      }else if (cifras[2]==4)
+	    	  numromano+="XL";
+	      else
+	    	  for(int i=1;i<=cifras[2];i++)
+	    		  numromano+="X";
 	      
-	      
-	      for(int i=1;i<cifras.length;i++)
-	    	  if(cifras[i]==9)
-	    		  numromano+=letraRomana[i]+letraRomana[i-1];
-	    	  else if (cifras[i]>=5) {
-	    		  numromano+=letraRomana[i+3];
-	    		  for(int j=6;j<=cifras[i];j++)
-	    			  numromano+=letraRomana[i];
-	    	  }else if(cifras[i]==4)
-	    		  numromano+=letraRomana[i]+letraRomana[i+3];
-	    	  else
-	    		  for(int j=1;j<=cifras[i];j++)
-	    			  numromano+=letraRomana[i];
-	    	  
+	      //unidades
+	      if(cifras[3]==9)
+	    	  numromano+="IX";
+	      else if(cifras[3]>=5) {
+	    	  numromano+="V";
+	    	  for(int i=6;i<=cifras[3];i++)
+	    		  numromano+="I";
+	      }else if(cifras[3]==4)
+	    	  numromano+="IV";
+	      else
+	    	  for(int i=1;i<=cifras[3];i++)
+	    		  numromano+="I";
 	      
 		return numromano;
 	}
