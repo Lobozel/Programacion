@@ -1,8 +1,12 @@
 package Ejercicios_sobre_cadenas;
 
 import java.util.Scanner;
-
-public class ConvertirARomanos {
+/**
+ * 
+ * @author MiguelÁngel
+ *
+ */
+public class P04_E17 {
 
 	public static String convertirARomano(int num) {
 		String numromano="";
@@ -68,8 +72,8 @@ public class ConvertirARomanos {
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
 		int num=0;
-		do { //Solo leo nÃºmeros menores de 4000 porque no puedo poner letras con el guiÃ³n encima
-		System.out.println("Introduce un nÃºmero natural y lo convertirÃ© en Romano (menor de 4000)");
+		do { //Solo leo números menores de 4000 porque no puedo poner letras con el guión encima
+		System.out.println("Introduce un número natural y lo convertirá en Romano (menor de 4000)");
 		num=entrada.nextInt();
 		}while(num>4000 || num<0);
 		System.out.println("Resultado: "+convertirARomano(num));

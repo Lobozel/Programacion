@@ -1,11 +1,15 @@
 package Ejercicios_sobre_cadenas;
 
 import java.util.Scanner;
-
-public class RecuentoDeVocales {
+/**
+ * 
+ * @author Miguel¡ngel
+ *
+ */
+public class P04_E25 {
 /*
- * Escriba un programa que calcule la frecuencia de aparici√≥n de las 
- * vocales de un texto proporcionado por el usuario. Esta soluci√≥n se debe
+ * Escriba un programa que calcule la frecuencia de apariciÛn de las 
+ * vocales de un texto proporcionado por el usuario. Esta soluciÛn se debe
  * presentar en forma de histograma, por ejemplo:
  * a 15 ***************
  * e 8 ********

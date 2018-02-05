@@ -1,8 +1,12 @@
 package Ejercicios_sobre_cadenas;
 
 import java.util.Scanner;
-
-public class eliminarocurrencias {
+/**
+ * 
+ * @author Miguel¡ngel
+ *
+ */
+public class P04_E16 {
 /*
  * Hacer un programa que elimine todas las ocurrencias de una subcadena
  * dentro de una cadena
