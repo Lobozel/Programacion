@@ -16,7 +16,7 @@ public class P03_EJ01 {
 		System.out.println("Los coches con esa marca son:");
 		for(int i=0;i<array.size();i++)
 			if(array.get(i).getMarca().equals(marca)){
-				array.get(i).toString();
+				System.out.println(array.get(i).toString()+"\n");
 				cont++;
 			}
 		System.out.println("Hay un total de "+cont+" coches con esa marca.");
@@ -33,7 +33,7 @@ public class P03_EJ01 {
 		
 		for(int i=0;i<array.size();i++)
 			if(array.get(i).getKm()<km)
-				array.get(i).toString();
+				System.out.println(array.get(i).toString()+"\n");
 	}
 	protected static void cochesConMasKms(ArrayList<Coche> array){
 		int MayorKm=Integer.MIN_VALUE;
@@ -45,7 +45,7 @@ public class P03_EJ01 {
 		System.out.println("Los coches con más kilómetros son:\n");
 		for(int i=0;i<array.size();i++)
 			if(array.get(i).getKm()==MayorKm)
-				System.out.println(array.get(i).toString());
+				System.out.println(array.get(i).toString()+"\n");
 		
 	}
 	
@@ -57,22 +57,22 @@ public class P03_EJ01 {
 		System.out.println("Los coches con ese tipo de combustible son:");
 		for(int i=0;i<array.size();i++)
 			if(array.get(i).getMarca().equals(combustible)){
-				array.get(i).toString();
+				System.out.println(array.get(i).toString()+"\n");
 				cont++;
 			}
 		System.out.println("Hay un total de "+cont+" coches con ese tipo de combustible.");
 	}
 	
 	protected static void kmsOrdenados(ArrayList<Coche> array){
-		ArrayList<Coche> aux = new ArrayList<Coche>();
+		Coche aux;
 		boolean fin=true;
 		for(int i=array.size();i>0 && fin;i--){
 			fin=false;
 			for(int j=0;j<i-1;j++){
 				if(array.get(j+1).getKm()<array.get(j).getKm()){
-					aux.set(j, array.get(j+1));
+					aux=new Coche(array,(j+1));
 					array.set(j+1, array.get(j));
-					array.set(j, aux.get(j));
+					array.set(j, aux);
 					fin=true;
 				}
 			}
@@ -81,7 +81,7 @@ public class P03_EJ01 {
 		System.out.println("Lista de coches ordenada por kms:\n");
 		
 		for(int i=0;i<array.size();i++)
-			array.get(i).toString();
+			System.out.println(array.get(i).toString()+"\n");
 		
 	}
 	
@@ -110,7 +110,7 @@ public class P03_EJ01 {
 				+ "6.-Información sobre todos los coches ordenados por su número de kilómetros de menor a mayor.\n"
 				+ "0.-Salir.");
 		menu=Coche.entrada.nextInt();
-		}while(menu<0 || menu>5);
+		}while(menu<0 || menu>6);
 		switch(menu){
 		case 1:
 			for(int i=0;i<array.size();i++)
@@ -129,7 +129,7 @@ public class P03_EJ01 {
 			cochesPorCombustible(array);
 			break;
 		case 6:
-			
+			kmsOrdenados(array);
 		}
 		}while(menu!=0);
 		

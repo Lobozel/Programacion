@@ -1,5 +1,6 @@
 package ArrayListyVector;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -14,6 +15,18 @@ public class Coche {
 	private String modelo;
 	private String t_combustible;
 	private int km;
+	
+	public Coche(){
+		
+	}
+	
+	public Coche(ArrayList<Coche> a, int i){
+		this.matricula=a.get(i).getMatricula();
+		this.marca=a.get(i).getMarca();
+		this.modelo=a.get(i).getModelo();
+		this.t_combustible=a.get(i).getT_combustible();
+		this.km=a.get(i).getKm();
+	}
 	
 	public String getMatricula() {
 		return matricula;
