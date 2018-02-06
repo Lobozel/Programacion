@@ -22,25 +22,25 @@ public class Prueba_ArrayList {
 		al.add(3);
 		al.add(4);
 		al.add(4);
-		System.out.println("\nArray lleno:");
+		//System.out.println("\nArray lleno:");
 		for(int elemento:al)
 			System.out.print(elemento+" ");
 		al.ensureCapacity(7);
-		System.out.println("\nElemento en la posición2");
-		System.out.println(al.get(2));
-		System.out.println("Posición en la que aparece el primer 4");
-		System.out.println(al.indexOf(4));
-		if(al.isEmpty())
-			System.out.println("Esta vacio");
-		else
-			System.out.println("No esta vacio");
-		System.out.println("Posición en la que aparece el último 4");
-		System.out.println(al.lastIndexOf(4));
+//		System.out.println("\nElemento en la posición2");
+//		System.out.println(al.get(2));
+//		System.out.println("Posición en la que aparece el primer 4");
+//		System.out.println(al.indexOf(4));
+//		if(al.isEmpty())
+//			System.out.println("Esta vacio");
+//		else
+//			System.out.println("No esta vacio");
+		//System.out.println("Posición en la que aparece el último 4");
+		//System.out.println(al.lastIndexOf(4));
 		al.remove(3);
 		al.set(2, 5);
-		System.out.println("tamaño del array "+al.size());
+		//System.out.println("tamaño del array "+al.size());
 		al.trimToSize();
-		System.out.println(al.toArray());
+		//System.out.println(al.toArray());
 		
 		System.out.println("Visualizar con for:");
 		for(int i=0;i<al.size();i++)
