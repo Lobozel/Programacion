@@ -15,32 +15,21 @@ public class P1_EJ02 {
  * positivo. El programa debe controlar entre otras excepciones que el
  * número sea negativo y que exista desbordamiento.
  */
-	public static void factor(int x) throws NoValidoException{
-		
-		if(x<0)
-		throw new NoValidoException("El número no es natural.");
-		
-		int contaDiv=0; 
-		for (int cont=1;cont<=x;cont++)
-			  if(x%cont==0)
-			  contaDiv++;
-		
-		  
-		  if(contaDiv<=2 && x!=1)
-			  throw new NoValidoException("Es un número primo.");
-		  else{
-			  
-		System.out.println(x+": 1 ");
-		int num=2; 
-		while(x!=1)
-			if(x%num==0){
-				x=x/num;
-				System.out.println("    "+num);
+	public static int factorial(int x) throws NoValidoException{
+		int factorial=1;
+		if (x<0)
+			throw new NoValidoException("No es un número positivo.");
+		else if (x==0)
+			return 1;
+		else 
+			for(int i=x;i>=1;i--) {
+				if(factorial*i>=2147483647)
+					throw new NoValidoException("El número es demasiado grande, pruebe con uno menor.");
+				else
+					factorial*=i;
 			}
-			else
-				num++;
-		System.out.println();
-		  }
+			
+		return factorial;
 	}
 	public static void main(String[] args) {
 		Scanner entrada = new Scanner(System.in);
@@ -54,7 +43,7 @@ public class P1_EJ02 {
 				System.out.println("Introduce un número entero positivo para calcular su factorial.");
 				num=entrada.nextInt();
 				
-				factor(num);
+				System.out.println("El factorial de "+num+" es "+factorial(num));
 				
 				fin=true;
 				
