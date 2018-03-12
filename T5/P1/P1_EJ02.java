@@ -23,7 +23,7 @@ public class P1_EJ02 {
 			return 1;
 		else 
 			for(int i=x;i>=1;i--) {
-				if(factorial*i>=2147483647)
+				if(factorial*i>=Integer.MAX_VALUE)
 					throw new NoValidoException("El número es demasiado grande, pruebe con uno menor.");
 				else
 					factorial*=i;
