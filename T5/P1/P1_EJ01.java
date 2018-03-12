@@ -6,19 +6,19 @@ import javax.swing.JOptionPane;
 
 /**
  * 
- * @author Miguel√Ångel
+ * @author Miguel¡ngel
  *
  */
 public class P1_EJ01 {
 /*
- * Implementar un programa que realice la divisi√≥n de dos n√∫meros naturales, si
- * uno de los dos no lo es, que arroje una excepci√≥n.
+ * Implementar un programa que realice la divisiÛn de dos n˙meros naturales, si
+ * uno de los dos no lo es, que arroje una excepciÛn.
  */
 	public static float division(float num, float div) throws NoValidoException {
 		float division=0;
 		
 		if (num<0 || div<0) {
-			throw new NoValidoException("Ambos n√∫meros deben ser naturales.");
+			throw new NoValidoException("Ambos n˙meros deben ser naturales.");
 		}else if(div==0) {
 			throw new NoValidoException("No se puede dividir por 0.");
 			
@@ -40,7 +40,7 @@ public class P1_EJ01 {
 				num=entrada.nextFloat();
 				System.out.println("Introduce un divisor natural: ");
 				div=entrada.nextFloat();
-				System.out.println("\nSoluci√≥n:  {"+num+"/"+div+" = "+division(num,div)+"}");
+				System.out.println("\nSoluciÛn:  {"+num+"/"+div+" = "+division(num,div)+"}");
 			
 				fin=true;
 			
@@ -55,7 +55,7 @@ public class P1_EJ01 {
 				}
 			
 			}catch(java.util.InputMismatchException im) {
-				JOptionPane.showMessageDialog(null, "No has introducido un n√∫mero","ERROR",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "No has introducido un n˙mero","ERROR",JOptionPane.ERROR_MESSAGE);
 				entrada.nextLine();
 			}
 				

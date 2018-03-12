@@ -29,17 +29,17 @@ public class P1_EJ04 {
 		discriminante=((b*b)-(4*(a*c)));
 		
 		if (discriminante<0)
-			System.out.println("La ecuaci贸n no tiene soluciones reales.");
+			System.out.println("La ecuaci髇 no tiene soluciones reales.");
 		else if(discriminante==0){
-			System.out.println("La ecuaci贸n solo tiene una soluci贸n real:");
+			System.out.println("La ecuaci髇 solo tiene una soluci髇 real:");
 			x1=(-b)/(2*a);
 			System.out.println("La solucion es: "+x1);
 		}
 		else{
-			System.out.println("La ecuaci贸n tiene dos soluciones reales.");
+			System.out.println("La ecuaci髇 tiene dos soluciones reales.");
 			x1=(-b)+Math.sqrt(discriminante)/(2*a);
 			x2=(-b)-Math.sqrt(discriminante)/(2*a);
-			System.out.println("Primera soluci贸n:\n"+x1+"\nSegunda soluci贸n:\n"+x2);
+			System.out.println("Primera soluci髇:\n"+x1+"\nSegunda soluci髇:\n"+x2);
 		}
 	}
 	

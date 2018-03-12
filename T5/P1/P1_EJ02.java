@@ -6,25 +6,25 @@ import javax.swing.JOptionPane;
 
 /**
  * 
- * @author Miguel√Ångel
+ * @author Miguel¡ngel
  *
  */
 public class P1_EJ02 {
 /*
- * Realizar un programa que calcule el factorial de cualquier n√∫mero entero
+ * Realizar un programa que calcule el factorial de cualquier n˙mero entero
  * positivo. El programa debe controlar entre otras excepciones que el
- * n√∫mero sea negativo y que exista desbordamiento.
+ * n˙mero sea negativo y que exista desbordamiento.
  */
 	public static int factorial(int x) throws NoValidoException{
 		int factorial=1;
 		if (x<0)
-			throw new NoValidoException("No es un n√∫mero positivo.");
+			throw new NoValidoException("No es un n˙mero positivo.");
 		else if (x==0)
 			return 1;
 		else 
 			for(int i=x;i>=1;i--) {
 				if(factorial*i>=Integer.MAX_VALUE)
-					throw new NoValidoException("El n√∫mero es demasiado grande, pruebe con uno menor.");
+					throw new NoValidoException("El n˙mero es demasiado grande, pruebe con uno menor.");
 				else
 					factorial*=i;
 			}
@@ -40,7 +40,7 @@ public class P1_EJ02 {
 			
 			try {
 				
-				System.out.println("Introduce un n√∫mero entero positivo para calcular su factorial.");
+				System.out.println("Introduce un n˙mero entero positivo para calcular su factorial.");
 				num=entrada.nextInt();
 				
 				System.out.println("El factorial de "+num+" es "+factorial(num));
@@ -59,7 +59,7 @@ public class P1_EJ02 {
 				}
 				
 			}catch(java.util.InputMismatchException im) {
-				JOptionPane.showMessageDialog(null, "No has introducido un n√∫mero","ERROR",JOptionPane.ERROR_MESSAGE);
+				JOptionPane.showMessageDialog(null, "No has introducido un n˙mero","ERROR",JOptionPane.ERROR_MESSAGE);
 				entrada.nextLine();
 			}
 			

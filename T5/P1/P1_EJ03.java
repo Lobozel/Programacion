@@ -2,16 +2,16 @@ package P1;
 
 import java.util.Scanner;
 
-public class P01_EJ03 {
+public class P1_EJ03 {
 
-	protected static boolean bisiesto(int aÃ±o){
+	protected static boolean bisiesto(int año){
 		boolean bisiesto=false;
-		if(aÃ±o%4==0 || aÃ±o%400==0 && aÃ±o%100!=0)
+		if(año%4==0 || año%400==0 && año%100!=0)
 			bisiesto=true;
 		return bisiesto;
 	}
 	
-	protected static int diasMes(int mes, int aÃ±o){
+	protected static int diasMes(int mes, int año){
 		int dias=0; 
 		switch (mes){
 		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
@@ -21,7 +21,7 @@ public class P01_EJ03 {
 			dias=30;
 			break;
 		case 2:
-			if(bisiesto(aÃ±o)) 
+			if(bisiesto(año)) 
 				dias=29;
 			else
 				dias=28;
