@@ -1,5 +1,8 @@
 package Vehiculos;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
+
 public class Turisticos extends Vehiculos{
 
 	double precioKm;
@@ -9,54 +12,60 @@ public class Turisticos extends Vehiculos{
 	static int numTurAlquilados;
 	
 	public Turisticos() {
+		do{
+			try{
+				System.out.println("Introduzca el precio por km de este vehículo.");
+				this.precioKm=leer.nextDouble();
+			}catch(InputMismatchException e){
+				System.out.println("No has introducido un número válido.");
+				this.precioKm=-1;
+			}
+			
+		}while(this.precioKm<0);
 		numTurismos++;
+		System.out.println("Ahora se dispone de un vehículo turistico más, en total se dispone de "+numTurismos+".\n\n");
+
 	}
 	
 	@Override
-	public void alquilar() {
-		int kmAlquiler=0;
-		do {
-			try {
-				System.out.println("Introduce los km que tiene el vehÃ­culo al alquilarlo.");
-				kmAlquiler=entrada.nextInt();
-			}catch(Exception e) {
-				System.out.println("No has introducido un nÃºmero vÃ¡lido.");
-				kmAlquiler=-1;
-			}
-		}while(kmAlquiler<0);
+	public void alquilar(int kmAlquiler) {
+		
 		this.kmAlquiler=kmAlquiler;
-		System.out.println("Â¡Enhorabuena! Has alquilado un coche turistico.");
+		System.out.println("¡Enhorabuena! Has alquilado un coche turistico.\n");
 		numTurAlquilados++;
+		this.alquilado=true;
 	}
 
 	@Override
-	public void devolver() {
-		int kmDevolucion=0;
-		do {
-			try {
-				System.out.println("Introduce los km que tiene el vehÃ­culo al devolverlo.");
-				kmDevolucion=entrada.nextInt();
-			}catch(Exception e) {
-				System.out.println("No has introducido un nÃºmero vÃ¡lido.");
-				kmDevolucion=-1;
-			}
-		}while(kmDevolucion<this.kmAlquiler);
-		this.kmDevolucion=kmDevolucion;
-		System.out.println("Has devuelto el vehÃ­culo con Ã©xito.");
+	public void devolver(int kmDevolver) throws IOException {
+		this.kmDevolucion=kmDevolver;
+		System.out.printf("%s%.2f%s\n","El alquiler suma un total de ",(double)((this.kmDevolucion-this.kmAlquiler)*this.precioKm),"€ paga en caja.");
+		System.out.println("Pulse intro para continuar...");
+        kmDevolver=System.in.read();
+		System.out.println("Has devuelto el vehículo con éxito.\n");
 		numTurAlquilados--;
+		this.alquilado=false;
 	}
 
 	@Override
 	public String showinfo() {
-		return null;
+		String alquilado="";
+		if(this.alquilado)
+			alquilado="está alquilado en este momento.";
+		else
+			alquilado="no ha sido alquilado.";
+		return String.format("%s%s%s%s%s%s%.2f%s%s%d%s%s%d%s", "Vehículo Turista con la matrícula: ",this.matricula,".\n"
+				, "El vehículo ",alquilado," y cuesta ",this.precioKm,"€/km.\n"
+				, "Actualmente existen ",numTurismos," vehículos turisticos "
+						, "y, de ellos, ",numTurAlquilados," están alquilados ahora mismo.\n");
 	}
 	
-	public class Unitarios extends Turisticos{
-		
+	public static class Unitarios extends Turisticos{
+
 	}
 	
-	public class Familiares extends Turisticos {
-		
+	public static class Familiares extends Turisticos {
+
 	}
 
 	

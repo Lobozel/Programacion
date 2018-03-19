@@ -1,81 +1,63 @@
 package Vehiculos;
 
-import java.util.Calendar;
+import java.io.IOException;
+import java.util.InputMismatchException;
 
 public class Camiones extends Vehiculos{
 
 	double precioDia;
-	Calendar diaAlquiler=Calendar.getInstance();
-	Calendar diaDevolucion=Calendar.getInstance();
+	int diaAlquiler;
+	int diaDevolucion;
 	static int numCamiones;
 	static int numCamAlquilados;
 	
 	public Camiones() {
-		diaAlquiler.set(1999,1,1);
-		diaDevolucion.set(1999, 1, 1);
+		do{
+			try{
+				System.out.println("Introduzca el precio por día de este vehículo.");
+				this.precioDia=leer.nextDouble();
+			}catch(InputMismatchException e){
+				System.out.println("No has introducido un número válido.");
+				this.precioDia=-1;
+			}
+			
+		}while(this.precioDia<0);
 		numCamiones++;
+		System.out.println("Ahora se dispone de un camión más, en total se dispone de "+numCamiones+".\n");
 	}
 	
 	@Override
-	public void alquilar() {
-		System.out.print("Fecha en la que alquilaste el camiÃ³n: ");
-		String fecha=leerFecha();
-		this.diaAlquiler.set(Integer.parseInt(fecha.substring(6, 10)),Integer.parseInt(fecha.substring(3, 5)),Integer.parseInt(fecha.substring(0,2)));
-		System.out.println("Â¡Enhorabuena! Has alquilado un camiÃ³n.");
+	public void alquilar(int dias) {
+		this.diaAlquiler=dias;
+		System.out.println("¡Enhorabuena! Has alquilado un camión.\n");
 		numCamAlquilados++;
+		this.alquilado=true;
 	}
 
 	@Override
-	public void devolver() {
-		System.out.print("Fecha en la que devolviste el camiÃ³n: ");
-		String fecha=leerFecha();
-		this.diaDevolucion.set(Integer.parseInt(fecha.substring(6, 10)),Integer.parseInt(fecha.substring(3, 5)),Integer.parseInt(fecha.substring(0,2)));
-		System.out.println("Has devuelto un camiÃ³n con Ã©xito.");
+	public void devolver(int dias) throws IOException {
+		this.diaDevolucion=dias;
+		System.out.printf("%s%.2f%s\n","El alquiler suma un total de ",(double)(((this.diaDevolucion-this.diaAlquiler)/86400000)*this.precioDia),"€ paga en caja.");
+		System.out.println("Pulse intro para continuar...");
+        dias=System.in.read();
+		System.out.println("Has devuelto un camión con éxito.\n");
 		numCamAlquilados--;
+		this.alquilado=false;
 	}
 
 	@Override
 	public String showinfo() {
-		return null;
+		String alquilado="";
+		if(this.alquilado)
+			alquilado="está alquilado en este momento.";
+		else
+			alquilado="no ha sido alquilado.";
+		return String.format("%s%s%s%s%s%s%.2f%s%s%d%s%s%d%s", "Camión con la matrícula: ",this.matricula,".\n"
+				, "El vehículo ",alquilado," y cuesta ",this.precioDia,"€/día.\n"
+				, "Actualmente existen ",numCamiones," camiones "
+						, "y, de ellos, ",numCamAlquilados," están alquilados ahora mismo.\n");
 	}
 	
-	protected static boolean bisiesto(int aÃ±o){
-		boolean bisiesto=false;
-		if(aÃ±o%4==0 || aÃ±o%400==0 && aÃ±o%100!=0)
-			bisiesto=true;
-		return bisiesto;
-	}
 	
-	public static int diasMes(int mes, int aÃ±o){
-		int dias=0; 
-		switch (mes){
-		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-			dias=31;
-			break;
-		case 4: case 6: case 9: case 11:
-			dias=30;
-			break;
-		case 2:
-			if(bisiesto(aÃ±o)) 
-				dias=29;
-			else
-				dias=28;
-		}
-		return dias;
-	}
-
-	protected static String leerFecha() {
-		String fecha="";
-		do {
-			System.out.println("Introduce la fecha con el formato dd/mm/aaaa");
-			fecha=entrada.nextLine();
-			}while(fecha.length()!=10 || fecha.charAt(2)!='/' || fecha.charAt(5)!='/' ||
-			Integer.parseInt(fecha.substring(3, 5))<1 || Integer.parseInt(fecha.substring(3, 5))>12 
-			|| Integer.parseInt(fecha.substring(0,2))<1 || Integer.parseInt(fecha.substring(0,2))>
-			diasMes(Integer.parseInt(fecha.substring(3, 5)),Integer.parseInt(fecha.substring(6, 10))));
-
-		return fecha;
-		
-	}
 
 }
