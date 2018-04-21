@@ -3,6 +3,7 @@ package Ejercicio2_11;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -29,7 +30,7 @@ public class PrincipalAlumnos {
 		BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
 		
 		try{
-			FileOutputStream nuevo = new FileOutputStream(ruta);
+			FileOutputStream nuevo = new FileOutputStream(ruta,true);
 			do{
 				leerAlumnos(leer, nuevo);
 				System.out.println("Introduce la letra f si NO desea introducir otro alumno.\n"
@@ -115,6 +116,8 @@ public class PrincipalAlumnos {
 					System.out.println(salida.readInt());
 					System.out.println(salida.readDouble());
 				}
+			}catch(EOFException eof){
+				System.out.println("Error fin de fichero.");
 			}catch(IOException io){
 				System.out.println("Error inesperado.");
 			}
@@ -126,8 +129,6 @@ public class PrincipalAlumnos {
 	public static void main(String[] args) {
 		String ruta="C:/Ficheros/Alumnos.txt";
 		crearFichero(ruta);
-		
-		
 
 	}
 
