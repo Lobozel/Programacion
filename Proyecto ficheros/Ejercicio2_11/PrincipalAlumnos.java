@@ -30,7 +30,7 @@ public class PrincipalAlumnos {
 		BufferedReader leer = new BufferedReader(new InputStreamReader(System.in));
 		
 		try{
-			FileOutputStream nuevo = new FileOutputStream(ruta,true);
+			FileOutputStream nuevo = new FileOutputStream(ruta);
 			do{
 				leerAlumnos(leer, nuevo);
 				System.out.println("Introduce la letra f si NO desea introducir otro alumno.\n"
@@ -98,12 +98,6 @@ public class PrincipalAlumnos {
 			System.out.println("Error al escribir los datos en el archivo.");
 		}
 		
-		
-		try {
-			entrada.close();
-		} catch (IOException e) {
-			System.out.println("Error inesperado. Ejecute el programa de nuevo porfavor.");
-		}
 	}
 	
 	protected static void mostrarFichero(String ruta){
@@ -117,7 +111,7 @@ public class PrincipalAlumnos {
 					System.out.println(salida.readDouble());
 				}
 			}catch(EOFException eof){
-				System.out.println("Error fin de fichero.");
+				System.out.println("\nFin de fichero.");
 			}catch(IOException io){
 				System.out.println("Error inesperado.");
 			}
