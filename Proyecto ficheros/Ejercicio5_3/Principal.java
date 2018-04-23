@@ -166,11 +166,11 @@ public class Principal {
             System.out.println("Fin del fichero");
 		}catch (FileNotFoundException e404) {
 			System.out.println("Archivo no encontrado.");
-		} catch (IOException e) {
-			System.out.println("Error al leer los datos.");
 		} catch (ClassNotFoundException e404) {
 			System.out.println("Clase no encontrada");
-		}
+		}catch (IOException e) {
+			System.out.println("Error al leer los datos.");
+		} 
 	}
 	
 	/**
