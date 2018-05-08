@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Vector;
 
 /**
  * 
@@ -34,7 +33,6 @@ public class MenuAlumnos {
 	static double suma=0;
 	static double peorNota=Double.MAX_VALUE;
 	static double mejorNota=Double.MIN_VALUE;
-	static Vector<String> nombres=new Vector<String>();
 	
 			public static void crearFichero(BufferedReader leer, String ruta){
 				
@@ -142,9 +140,10 @@ public class MenuAlumnos {
 			}
 			
 			public static void mejorMedia(String ruta){
-				nombres.removeAllElements();
 				String nombre="";
 				double nota=0;
+				
+				System.out.println("\nEstos son los alumnos con mejor nota media: ");
 				
 				try {
 					FileInputStream fichero=new FileInputStream(ruta);
@@ -155,11 +154,12 @@ public class MenuAlumnos {
 							salida.readInt();
 							nota=salida.readDouble();
 							if(nota==mejorNota){
-								nombres.add(nombre);
+								System.out.println("Nombre: "+nombre);
+								System.out.println("Nota: "+mejorNota);
 							}
 						}
 					}catch(EOFException eof){
-						System.out.println("\nEstos son los alumnos con mejor nota media:");
+						System.out.println("");
 					}catch(IOException io){
 						System.out.println("Error inesperado.");
 					}
@@ -167,17 +167,13 @@ public class MenuAlumnos {
 					System.out.println("Archivo no encontrado.");
 				}
 				
-				for(int i=0;i<nombres.size();i++){
-					System.out.println("Nombre: "+nombres.get(i));
-					System.out.println("Nota: "+mejorNota);
-				}
-				
 			}
 			
 			public static void peorMedia(String ruta){
-				nombres.removeAllElements();
 				String nombre="";
 				double nota=0;
+				
+				System.out.println("\nEstos son los alumnos con peor nota media: ");
 				
 				try {
 					FileInputStream fichero=new FileInputStream(ruta);
@@ -188,22 +184,19 @@ public class MenuAlumnos {
 							salida.readInt();
 							nota=salida.readDouble();
 							if(nota==peorNota){
-								nombres.add(nombre);
+								System.out.println("Nombre: "+nombre);
+								System.out.println("Nota: "+peorNota);
 							}
 						}
 					}catch(EOFException eof){
-						System.out.println("\nEstos son los alumnos con peor nota media:");
+						System.out.println("");
 					}catch(IOException io){
 						System.out.println("Error inesperado.");
 					}
 				} catch (FileNotFoundException e404) {
 					System.out.println("Archivo no encontrado.");
 				}
-				
-				for(int i=0;i<nombres.size();i++){
-					System.out.println("Nombre: "+nombres.get(i));
-					System.out.println("Nota: "+peorNota);
-				}
+			
 			}
 			
 			public static void main(String[] args) {
