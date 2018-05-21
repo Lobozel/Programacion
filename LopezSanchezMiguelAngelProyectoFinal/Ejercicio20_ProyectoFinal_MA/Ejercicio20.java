@@ -55,7 +55,7 @@ public class Ejercicio20 {
 	class CreaTuPizza extends JPanel implements ActionListener{
 		
 		static double precio=6;
-		static String[] tamaños = new String[]{"Pequeña 6€","Mediana 8.50€","Familiar 12€"};
+		static String[] tamanios = new String[]{"Pequeña 6€","Mediana 8.50€","Familiar 12€"};
 		static String[] salsas = new String[]{"SIN SALSA","BARBAACOA CRÉME","BBQ CREME DOBLE","BARBACOA",
 				"BARBACOA DOBLE","BURGER","BURGER DOBLE","CARBONARA","CARBONARA DOBLE","JALISCO","JALISCO DOBLE",
 				"TOMATE Y ORÉGANO","TOMATE Y ORÉGANO DOBLE"};
@@ -99,7 +99,7 @@ public class Ejercicio20 {
 			text1.setBounds(20,20,100,30);
 			add(text1);
 			tamaño = new JComboBox<String>();
-			for(String i:tamaños)
+			for(String i:tamanios)
 				tamaño.addItem(i);
 			tamaño.setBounds(120,20,180,30);
 			add(tamaño);

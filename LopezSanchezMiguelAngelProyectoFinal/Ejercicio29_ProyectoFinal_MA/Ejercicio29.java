@@ -68,6 +68,7 @@ public class Ejercicio29 {
 		
 
 		private static final long serialVersionUID = 1L;
+		Persona p = new Persona();
 		File archivo;
 		ObjectOutputStream FPersona;
 		JLabel text1;
@@ -182,7 +183,7 @@ public class Ejercicio29 {
 					advertencia1.setText("El fichero ya existe.");
 				}
 				try {
-					FPersona = new ObjectOutputStream(new FileOutputStream(archivo));
+					FPersona = new ObjectOutputStream(new FileOutputStream(archivo, true));
 				} catch (FileNotFoundException e1) {
 					advertencia1.setVisible(true);
 					advertencia1.setText("Eror fichero no encontrado.");
@@ -225,6 +226,16 @@ public class Ejercicio29 {
 				}
 				
 				if(nombre.getText().length()<10 && apellido.getText().length()<20 && validarDNI(nif.getText())){
+					p.setNombre(nombre.getText());
+					p.setApellido(apellido.getText());
+					p.setTelefono(telefono.getText());
+					p.setNIF(nif.getText());
+					
+					try {
+						FPersona.writeObject((Persona)p);
+					} catch (IOException e1) {
+						
+					}
 					
 				}
 				
